@@ -10,6 +10,7 @@ from weather.settings import YA_WEATHER_LINK
 env_path = find_dotenv()
 load_dotenv(env_path)
 
+
 def get_weather(lat: float, lon: float):
     data = requests.get(f'{YA_WEATHER_LINK}?lat={lat}&lon={lon}&lang=ru_RU',
                         headers={'X-Yandex-API-Key': environ['YA_TOKEN'],

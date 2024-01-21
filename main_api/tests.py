@@ -23,6 +23,7 @@ class TestYandexApi(TestCase):
     def test_get_weather(self, mocked):
         self.assertEqual(get_weather(54.45, 43.33), {'temp': -13, 'pressure_mm': 752, 'wind_speed': 2})
 
+
 class WeatherModelTest(TestCase):
 
     def setUp(self) -> None:
@@ -35,6 +36,7 @@ class WeatherModelTest(TestCase):
         self.assertEqual(weather.pressure, 752)
         self.assertEqual(weather.wind_speed, 2)
 
+
 class APIWeatherTest(APITestCase):
 
     def setUp(self) -> None:
@@ -45,4 +47,3 @@ class APIWeatherTest(APITestCase):
         response = self.client.get('/weather?city=Москва')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.json(), {'degree': -13, 'pressure': 752, 'wind_speed': 2})
-
