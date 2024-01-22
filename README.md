@@ -13,6 +13,8 @@
 - pip install -r requirements.txt
 - python3 manage.py migrate
 - python3 manage.py loaddata fixtures/initial.json --app app.city
+- Создать файл .env и поместить туда ключи от телеграм бота и яндекс API
+с именами TELEGRAM_TOKEN и YA_TOKEN соответственно.
 
 ## Start
 - python3 manage.py runserver
